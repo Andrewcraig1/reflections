@@ -1,0 +1,46 @@
+
+What happens when you initialize a repository? Why do you need to do it?
+
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+Logical change Tracked by status, where as in directory I can still be working a logical change on the file 
+
+How can you use the staging area to make sure you have one commit per logical
+change?
+
+What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+
+How do the diagrams help you visualize the branch structure?
+
+What is the result of merging two branches together? Why do we represent it in
+the diagram the way we do?
+
+What are the pros and cons of Gitâ€™s automatic merging vs. always doing merges
+manually?
+
+----------------------------------------------------------------------------
+Workflow making a commit
+working directory -> staging area ->repository
+
+git init  	# initialises a new repository with git
+
+git add 	# adds a file from the working directory to the staging area 
+git reset 	# removes a file from the staging area to the directory
+
+git log   	# lists all files in a repository
+git status 	# shows which files have changed since last commit
+
+git diff 	# compares differences between two commits. 'git diff ID commit1 ID commit2'
+
+git checkout ID		# takes you to commit ID
+git checkout master # takes you to master commit branch
+
+git clone
+
+
+
+
+
+
+
