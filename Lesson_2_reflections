@@ -1,0 +1,155 @@
+
+1 What happens when you initialize a repository? Why do you need to do it?
+
+2 How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+Logical change Tracked by status, where as in directory I can still be working a logical change on the file 
+
+3 How can you use the staging area to make sure you have one commit per logical
+change?
+
+4 What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+
+5 How do the diagrams help you visualize the branch structure?
+It's a helpful map.
+
+6 What is the result of merging two branches together? Why do we represent it in
+the diagram the way we do?
+
+7 What are the pros and cons of Gitâ€™s automatic merging vs. always doing merges
+manually?
+
+----------------------------------------------------------------------------
+Workflow making a commit
+working directory -> staging area ->repository
+
+git init  			# initialises a new repository with git
+
+git add [file]		# adds a file from the working directory to the staging area 
+git reset [file]	# removes a file from the staging area to the directory
+
+git log   			# lists all files in a repository
+git status 			# shows which files have changed since last commit
+
+$ git commit -m "[descriptive message]" # Commit files in staging area
+
+
+git diff 	# compares differences between two commits. 'git diff ID commit1 ID commit2'
+
+
+----------------------------------------------------------------------------
+From github cheat sheet (URL https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf)
+
+MAKE CHANGES
+Review edits and craf a commit transaction
+
+$ git status
+Lists all new or modified files to be commited
+
+$ git add [file]
+Snapshots the file in preparation for versioning
+
+$ git reset [file]
+Unstages the file, but preserve its contents
+
+$ git diff
+Shows file differences not yet staged
+
+$ git diff --staged
+Shows file differences between staging and the last file version
+
+$ git commit -m "[descriptive message]"
+Records file snapshots permanently in version history
+
+----------------------------------------------------------------------------
+BRANCHES GROUP CHANGES
+Name a series of commits and combine completed efforts
+
+$ git branch
+Lists all local branches in the current repository
+
+$ git branch [branch-name]
+Creates a new branch
+
+$ git checkout [branch-name]
+Switches to the specified branch and updates the working directory
+
+$ git checkout -b [new-branch-name]
+
+$ git merge [branch] [branch]
+
+$ git branch -d [branch-name]
+Deletes the specified branch
+
+$ git gc
+If a branch is deleted and leaves some commits unreachable from existing branches, those commits will continue to be accessible by commit id, until Git’s garbage collection runs. This will happen automatically from time to time, unless you actively turn it off. You can also run this process manually with git gc.
+
+$git log --graph --oneline [branch-name] [branch-name]
+
+VIEW SEQUENCE HISTORY OF BRANCHES
+
+example: to identify commit history of master branch and coin branch
+
+craigroberts (master) asteroids $ git log --graph --oneline master coins
+master branch commits are to the left margin and the 4 coins commits are indented.
+The top commit is the most recent.
+
+* 3884eab Add color
+* 3e42136 now using requestAnimationFrame
+* 4035769 frame interval was set wrong after game was paused
+* 25ede83 a couple missing ends with the ipad version
+* df03538 I can't spell 'screen' apparently :)
+| * 354dfdd Make ships able to spawn on coins
+| * 0c6daf1 Make it possible to collect coins
+| * a3c0ae4 Create helper functions
+| * 656b02e First pass at adding coins
+|/  
+* b0678b1 Revert controls
+* f19cb1b Fix typo in space
+* 75928a9 Use space for movement and enter for shooting
+* ac83b72 mostly finished ipad version
+* 7ca4826 trying to get div touch controls to work
+* 3cb406e first pass at ipad controls
+* fe7993e now capturing down key so people don't accidently scroll the page
+* 343935f added license
+* 80f3bc7 increased canvas size
+* 7dc3de0 made the framerate counter dumb but more accurate
+* f077ea3 added pointInPolygon method for moz
+* 5cb7bed added reverseTransform method
+
+----------------------------------------------------------------------------
+<<<<<<< HEAD
+
+BRANCHES
+||||||| merged common ancestors
+
+=======
+Just reread this
+>>>>>>> afd5a81a8a10e18eefd5c5adf85c8b86ddde0f27
+
+Three common types: 
+								------ DEVELOPMENTAL
+					MASTER ----- ------PRODUCTION
+									-------EXPERIMENTAL
+
+----------------------------------------------------------------------------
+MERGE
+
+$ git merge [branch] [branch]
+Combines the specified branch’s history into the current branch
+	Example: merge branch 'coins' into the master branch
+			 git checkout master 
+			 git merge master coins
+
+Motivation
+Master has updated since the easy-mode branch was created. In this case, it has the addition of coins, which you might like to include in the easy-mode branch. In general, it’s very common that if you make a branch, either an experimental branch or to work on a new feature, you want to periodically merge master into that branch. This is because master usually contains the official version of the code, and it’s common to want experimental changes to include all of the changes to master.
+
+Resolve Merge conflicts
+...refer to lesson 2 videos
+
+
+----------------------------------------------------------------------------
+
+
+

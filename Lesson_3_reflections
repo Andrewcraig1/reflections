@@ -1,0 +1,31 @@
+GIT HUB
+----------------------------------------------------------------------------
+Log on to Github.com.
+Add new repository name
+
+----------------------------------------------------------------------------
+Go to Terminal 
+
+git remote			# view exisitng branches on GitHub
+
+git remote add	[repository name on github] [github url]	
+					# adds a repository on GitHub
+					# if you have only one remote repository it is standard to name it 'origin'
+
+git remote -v 		# git remote outputs more info push and fetch urls. 
+					# Use this to check urls are correct
+
+Example:
+		craigroberts (master *+) reflections $ git remote
+		craigroberts (master *+) reflections $ git remote add origin https://github.com/Andrewcraig1/reflections
+		craigroberts (master *+) reflections $ git remote
+		origin
+		craigroberts (master *+) reflections $ git remote -v
+		origin	https://github.com/Andrewcraig1/reflections (fetch)
+		origin	https://github.com/Andrewcraig1/reflections (push)
+
+git push [remote name] [local branch name]		
+					# pushes commits onto github
+
+
+
