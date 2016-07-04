@@ -27,5 +27,6 @@ Example:
 git push [remote name] [local branch name]		
 					# pushes commits onto github
 
+Just experienced ythe importance of getting commits push and pulls in the right sequence - otherwise its quite a timewaster to fix!
 
 
