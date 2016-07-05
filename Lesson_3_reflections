@@ -27,6 +27,17 @@ Example:
 git push [remote name] [local branch name]		
 					# pushes commits onto github
 
-Just experienced ythe importance of getting commits push and pulls in the right sequence - otherwise its quite a timewaster to fix!
+Just experienced the importance of getting commits push and pulls in the right sequence - otherwise its quite a timewaster to fix! But I have also learnt how to fix merge conflicts - thats great!! Use the following sequence:
+
+	git fetch [remote]
+	git status
+	open file in file editor and resolve conflicts
+	git add
+	git commit -m "message"
+
+Hooray!! 
+
+
+
 
 
